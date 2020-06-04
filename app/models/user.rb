@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
+  
+  # rails 04 課題
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])[a-z\d]{8,32}+\z/
   validates :password, presence: true,
   length: { minimum: 8, maximum: 32},
