@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
   
   # rails 04 課題
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])[a-z\d]{8,32}+\z/
@@ -15,4 +13,6 @@ class User < ApplicationRecord
   length: { maximum: 15}
   
   has_secure_password
+  
+  has_many :topics
 end
