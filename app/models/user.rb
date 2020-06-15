@@ -17,4 +17,6 @@ class User < ApplicationRecord
   has_many :topics
   has_many :favorites
   has_many :favorite_topics, through: :favorites, source: 'topic'
+  # rails07 コメント機能　課題
+  has_many :comments
 end

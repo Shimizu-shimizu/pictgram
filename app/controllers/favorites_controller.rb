@@ -17,4 +17,10 @@ class FavoritesController < ApplicationController
 		@favorite.destroy
 		redirect_to topics_path, success: 'お気に入りを取り消しました'
 	end
+	def show
+		@favorite = favorite.find_by(id:params[:id])
+		@user = @favorite.user
+		# rails 07 いいね数表示の課題
+		@favorites_count = Favorite.where(post_id: @post.id).count
+	end
 end
